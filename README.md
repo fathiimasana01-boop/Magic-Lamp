@@ -2,96 +2,60 @@
 
 
 
-# [Project Name] 🎯
+# [Magic Lamb] 🎯
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [Sana]
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: [Sana Fathima] - [Collage Of Engineering Munnar]
+- Member 2: [Name] - [College Of Engineering Munnar]
 
 ### Project Description
-[2-3 lines about what your project does]
+[It is just a funny project where we can rub the magic lamb and then the legendary genie will appear and ask for a wish]
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+[We are solving the dream of our inner child to rub a magic lamb and ask for a wish]
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+[we are making this too easy for everyone. anyone can rub the lamb and ask for a wish and the genie will reply to you]
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+- HTML ,JavaScript ,CSS
+- Vanilla Web Architecture
+- Web Audio API ,Web Speech API,HTML5 Canvas 2D API ,OpenCV 
+- VS Code
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
-
-### Implementation
-For Software:
-# Installation
-[commands]
-
-# Run
-[commands]
 
 ### Project Documentation
 For Software:
 
 # Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
+<img width="1920" height="1080" alt="Screenshot (194)" src="https://github.com/user-attachments/assets/7e944660-46f3-4523-8f1e-9923059a6e66" />
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+Here is our legendary 3000 year old ancient magic lamb.
 
-# Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
+<img width="1920" height="1080" alt="Screenshot (195)" src="https://github.com/user-attachments/assets/f731b018-bea6-4beb-abb1-19f290b6986d" />
 
-For Hardware:
+After rubbing the lamb here comes our genie.
 
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+<img width="1920" height="1080" alt="Screenshot (198)" src="https://github.com/user-attachments/assets/4e84eca1-8567-46be-a48b-7c7977f86e6f" />
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+There is a problem too our genie is not only magical but also a 3000 year old dumb, so all of his replies will be the dumbest reply that you can ever hear in your life.
 
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
 
-![Build](Add photos of build process here)
-*Explain the build steps*
 
-![Final](Add photo of final product here)
-*Explain the final build*
 
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
 
-# Additional Demos
-[Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Name 1]: [Sana Fathima]
+
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
