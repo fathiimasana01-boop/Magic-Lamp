@@ -1,0 +1,16 @@
+{
+  "short_name": "Magic Lamp",
+  "name": "Aladdin's Magic Lamp - Make a Wish!",
+  "description": "Rub the magic lamp, summon Aladdin the Genie, and make your wishes!",
+  "start_url": "./index.html",
+  "background_color": "#0b071e",
+  "theme_color": "#ffd700",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "assets/genie_original.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

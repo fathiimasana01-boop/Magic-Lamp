@@ -1,0 +1,41 @@
+{
+  "project": "Aladdin's Magic Lamp",
+  "character": "Aladdin the Genie",
+  "categories": {
+    "money": [
+      "I just transferred 10,000 Monopoly dollars into your imaginary bank account! HAHAHAHA!",
+      "1 CRORE RUPEES?!? Granted! ...In 1940s currency! Enjoy your vintage paper collection! HA-HA-HA!",
+      "I WOULD MAKE YOU RICH! But honestly... I'm also waiting for someone to rub a lamp and make ME rich! AHAHAHA!",
+      "MONEY GRANTED! But tax season is next month. The government takes 99% of magic currency! HAHAHAHA!",
+      "I TRIED GENERATING BITCOIN FOR YOU! But my magic lamp got overheated trying to mine crypto! HA-HA-HA!"
+    ],
+    "love": [
+      "BROTHER! I can summon ancient mythical dragons... BUT EVEN MAGIC CANNOT FIX YOUR PICKUP LINES! HAHAHAHA!",
+      "YOU WANT A DATE?!? Granted! Here is a delicious 3000-year-old dried date fruit! HA-HA-HA!",
+      "I TRIED CASTING A LOVE SPELL ON YOUR CRUSH! But my crystal ball displayed: 'USER HAS BLOCKED YOU'! OOF! AHAHAHA!",
+      "GRANTED! You are now deeply in love... WITH YOUR BED AND SLEEP SCHEDULE! HAHAHAHA!"
+    ],
+    "exams": [
+      "NOW THAT IS A WISH you should have made BEFORE the exam instead of watching Reels till 3 AM! HAHAHAHA!",
+      "GRANTED! You passed! ...IN YOUR DREAMS! Now close this tab and open your textbook, mortal! HA-HA-HA!",
+      "I CHECKED YOUR SYLLABUS! Even ancient Arabian magic was NOT designed to memorize 14 chapters in 10 minutes! AHAHAHA!"
+    ],
+    "cars": [
+      "GRANTED! A shiny red Ferrari has materialized! ...In Hot Wheels scale (1:64)! Please don't sit on it! HAHAHAHA!",
+      "A SUPERCAR?!? Why drive on asphalt when FLYING CARPETS exist?! Zero traffic and zero petrol cost! HA-HA-HA!",
+      "HERE IS A PICTURE OF A LAMBORGHINI! Download complete! Please do not ask me for insurance money! AHAHAHA!"
+    ],
+    "superpowers": [
+      "GRANTED! You can now turn invisible! ...BUT ONLY WHEN NOBODY IS LOOKING AT YOU! HAHAHAHA!",
+      "YOU CAN FLY NOW! Maximum altitude: 2 CENTIMETERS above the floor! Watch out for bugs! HA-HA-HA!",
+      "MIND READING GRANTED! You read your cat's mind: 'Feed me, human slave.' Deep stuff! AHAHAHA!"
+    ]
+  },
+  "quirks": [
+    "WAIT... YOU WANT WHAT?! Let me check my magic database... ERROR 404: Wish failed successfully! HAHAHAHA!",
+    "MY MAGIC DEPARTMENT HAS REVIEWED YOUR WISH... and rejected it for lack of originality! Try harder! HA-HA-HA!",
+    "ERROR: GenieOS Software Update Required! Downloading version 15.4... Please do not turn off your lamp! HAHAHAHA!",
+    "HOLD ON... The lamp's Wi-Fi signal just dropped! Try turning your cursor off and rubbing it on again! HA-HA-HA!",
+    "SORRY! Your wish was flagged as SPAM by the Ethereal Spam Filter! AHAHAHA!"
+  ]
+}
