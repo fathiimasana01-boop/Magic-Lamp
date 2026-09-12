@@ -1,1 +1,192 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aladdin's Magic Lamp - Make a Wish!</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Outfit:wght@400;600;700;800&family=Reenie+Beanie&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Canvas for Stars, Smoke & Magic Particles -->
+    <canvas id="bg-canvas"></canvas>
+    
+    <!-- Ambient Sound Mute/Unmute Toggle -->
+    <div class="audio-control">
+        <button id="mute-btn" class="icon-btn" title="Toggle Sound">
+            <span id="audio-icon">🔊</span>
+            <span id="audio-text">Sound ON</span>
+        </button>
+    </div>
+
+    <!-- Main Application Container -->
+    <main id="app-container" class="phase-landing">
+        
+        <!-- Header Text (Landing Phase) -->
+        <header id="header-text" class="header-landing">
+            <h1 class="magic-title">Rub the Lamp...</h1>
+            <p class="magic-subtitle">Maybe something magical will happen 👀</p>
+        </header>
+
+        <!-- Main Showcase Container (Side-by-Side Split layout when active) -->
+        <div id="active-showcase" class="active-showcase">
+
+            <!-- LEFT PANEL: Aladdin Genie + Speech Bubble + Chat Reply Interface -->
+            <div id="left-panel" class="showcase-panel left-panel">
+                <div id="aladdin-stage" class="aladdin-stage hidden">
+                    <div id="aladdin-avatar-wrapper" class="aladdin-avatar-wrapper">
+                        <div id="aladdin-aura" class="aladdin-aura"></div>
+                        <div id="aladdin-svg-container" class="aladdin-svg-container"></div>
+                    </div>
+
+                    <!-- Speech Bubble for Aladdin's Voice -->
+                    <div id="speech-bubble" class="speech-bubble hidden">
+                        <div class="speaker-name">Aladdin the Genie 🧞‍♂️</div>
+                        <div id="speech-text" class="speech-text"></div>
+                        <div class="speech-tail"></div>
+                    </div>
+                </div>
+
+                <!-- Chat Reply Section (Appears after Aladdin is summoned) -->
+                <section id="chat-section" class="chat-section hidden">
+                    <div class="chat-header">
+                        <div class="genie-badge">
+                            <span class="online-indicator"></span>
+                            <span>Aladdin's Magic Wish Booth</span>
+                        </div>
+                        <div id="wish-counter-badge" class="wish-counter-badge">Wishes Granted: 0</div>
+                    </div>
+
+                    <!-- Chat Messages Transcript -->
+                    <div id="chat-messages" class="chat-messages">
+                        <!-- Dialogue bubbles appended here -->
+                    </div>
+
+                    <!-- Quick Wish Suggestion Chips -->
+                    <div id="quick-chips" class="quick-chips">
+                        <span class="chip-label">Quick Wishes:</span>
+                        <button class="chip-btn" data-wish="I want to be rich!">💰 1 Crore Rupees</button>
+                        <button class="chip-btn" data-wish="Give me a red Ferrari!">🏎️ Red Ferrari</button>
+                        <button class="chip-btn" data-wish="Find me a girlfriend!">❤️ True Love</button>
+                        <button class="chip-btn" data-wish="Pass my exams without studying!">📚 Pass Exams</button>
+                        <button class="chip-btn" data-wish="I want unlimited wishes!">✨ Unlimited Wishes</button>
+                    </div>
+
+                    <!-- Reply Input Form -->
+                    <form id="wish-form" class="wish-form">
+                        <input type="text" id="wish-input" class="wish-input" placeholder="Type your wish here to reply..." autocomplete="off" maxlength="200" required>
+                        <button type="submit" id="wish-submit" class="wish-submit-btn">
+                            <span>Make Wish</span>
+                            <span class="sparkle-icon">✨</span>
+                        </button>
+                    </form>
+                </section>
+            </div>
+
+            <!-- RIGHT PANEL: Magic Lamp & Rub Power Meter -->
+            <div id="right-panel" class="showcase-panel right-panel">
+                <div id="lamp-stage" class="lamp-stage">
+                    <div id="magic-glow" class="magic-glow"></div>
+                    <div id="smoke-container" class="smoke-container"></div>
+                    
+                    <!-- SVG Arabian Magic Lamp -->
+                    <div id="lamp-wrapper" class="lamp-wrapper">
+                        <svg id="magic-lamp-svg" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="lampGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#fff5a0" />
+                                    <stop offset="25%" stop-color="#ffd700" />
+                                    <stop offset="60%" stop-color="#b8860b" />
+                                    <stop offset="90%" stop-color="#7a5200" />
+                                    <stop offset="100%" stop-color="#3d2800" />
+                                </linearGradient>
+
+                                <linearGradient id="goldHighlight" x1="0%" y1="0%" x2="0%" y2="100%">
+                                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.8"/>
+                                    <stop offset="50%" stop-color="#ffd700" stop-opacity="0.3"/>
+                                    <stop offset="100%" stop-color="#b8860b" stop-opacity="0"/>
+                                </linearGradient>
+
+                                <radialGradient id="rubyGlow" cx="50%" cy="50%" r="50%">
+                                    <stop offset="0%" stop-color="#ff4d4d"/>
+                                    <stop offset="70%" stop-color="#b30000"/>
+                                    <stop offset="100%" stop-color="#4d0000"/>
+                                </radialGradient>
+
+                                <filter id="lampGlowFilter" x="-20%" y="-20%" width="140%" height="140%">
+                                    <feGaussianBlur stdDeviation="8" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                            </defs>
+
+                            <!-- Lamp Base Stand -->
+                            <ellipse cx="150" cy="175" rx="50" ry="12" fill="url(#lampGold)" stroke="#593b00" stroke-width="2"/>
+                            <path d="M120,175 C130,160 170,160 180,175 Z" fill="url(#lampGold)" stroke="#593b00" stroke-width="2"/>
+
+                            <!-- Lamp Main Belly Body -->
+                            <path d="M80,140 C50,130 50,90 90,80 C130,70 190,70 220,95 C240,110 210,150 160,155 C120,159 90,150 80,140 Z" 
+                                  fill="url(#lampGold)" stroke="#593b00" stroke-width="2.5" filter="url(#lampGlowFilter)"/>
+                            
+                            <!-- Highlight -->
+                            <path d="M100,88 C130,80 180,82 205,100 C170,88 120,88 100,88 Z" fill="url(#goldHighlight)"/>
+
+                            <!-- Spout Neck & Nozzle -->
+                            <path d="M85,95 C60,90 35,70 20,60 C25,75 45,95 70,110 Z" fill="url(#lampGold)" stroke="#593b00" stroke-width="2"/>
+                            <ellipse cx="22" cy="62" rx="7" ry="12" transform="rotate(-25 22 62)" fill="#3d2800" stroke="#ffd700" stroke-width="2"/>
+
+                            <!-- Magic Smoke Tip Glow -->
+                            <circle cx="18" cy="58" r="4" fill="#64ffda" class="spout-tip-glow"/>
+
+                            <!-- Lamp Handle -->
+                            <path d="M205,100 C240,80 270,100 260,130 C250,155 210,145 195,135 C215,140 240,135 245,120 C250,105 230,95 205,100 Z" 
+                                  fill="url(#lampGold)" stroke="#593b00" stroke-width="2"/>
+
+                            <!-- Lamp Lid Cover -->
+                            <path d="M125,76 C125,65 175,65 175,76 Z" fill="url(#lampGold)" stroke="#593b00" stroke-width="2"/>
+                            <path d="M140,66 C140,55 160,55 160,66 Z" fill="url(#lampGold)"/>
+                            <circle cx="150" cy="52" r="7" fill="url(#rubyGlow)" stroke="#ffd700" stroke-width="1.5"/>
+                            <ellipse cx="148" cy="50" rx="2" ry="3" fill="#ffffff" opacity="0.8"/>
+
+                            <!-- Engravings -->
+                            <path d="M110,120 Q150,140 190,115" stroke="#7a5200" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            <path d="M120,130 Q150,146 180,127" stroke="#ffd700" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
+                            <circle cx="150" cy="125" r="4" fill="url(#rubyGlow)"/>
+                        </svg>
+
+                        <!-- Rub Target -->
+                        <div id="rub-target" class="rub-target" title="Rub the lamp with your cursor or finger!"></div>
+                    </div>
+
+                    <!-- Rub Progress Meter -->
+                    <div id="rub-meter-container" class="rub-meter-container">
+                        <div class="meter-label">Magic Power:</div>
+                        <div class="meter-bar-outer">
+                            <div id="meter-bar-inner" class="meter-bar-inner" style="width: 0%;"></div>
+                        </div>
+                        <div id="meter-text" class="meter-text">░░░░░░░░░░ 0%</div>
+                    </div>
+
+                    <div id="rub-hint" class="rub-hint">✨ Rub back and forth across the lamp! ✨</div>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- JS Scripts -->
+    <script src="js/audio.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="assets/aladdin_avatars.js"></script>
+    <script src="js/genie.js"></script>
+    <script src="js/aiEngine.js"></script>
+    <script src="js/chatUI.js"></script>
+    <script src="js/lamp.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
